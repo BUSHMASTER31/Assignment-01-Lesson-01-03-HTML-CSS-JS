@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add List Item</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+
+    <input type="text" id="myInput" placeholder="Enter a task">
+    <button onclick="addListItem()">Add</button>
+
+    <ul id="myList">
+    <li>Pay Bills</li>
+    <li>Read a Book</li>
+    <li>Meet Anna</li>
+    <li>Wash Dishes</li>
+    </ul>
+
+    <script>
+        function addListItem() {
+            var li = document.createElement("li"); 
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t); 
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+               
+                
+
+                document.getElementById("myList").appendChild(li); 
+                document.getElementById("myInput").value = ""; 
+            }
+        }
+    </script>
+</body>
+<style type="text/css">
+    #myList{
+    padding: 0px;   
+    margin: 0px;
+    list-style: none;
+    font-size: 20px;
+    
+}
+li:nth-child(even){
+    background: #eee;
+}
+li:nth-child(odd){
+    background: #f9f9f9;
+}
+li{
+    padding-bottom: 14px;
+    padding-top: 14px;
+    padding-right: 10px;
+    padding-left: 40px;
+}
+</style>
+</html>
